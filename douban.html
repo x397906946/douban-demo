@@ -309,12 +309,14 @@
       bind: function(){
         var _this = this
         this.$container.find('.search-area .button').on('click', function(){
+          _this.$content.empty()
           _this.getData(function(data){
             _this.renderData(data)
           })
         })
         this.$container.find('.search-area input').on('keyup', function(e){
           if(e.key === 'Enter'){
+            _this.$content.empty()
             _this.getData(function(data){
               _this.renderData(data)
             })
